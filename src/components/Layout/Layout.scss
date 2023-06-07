@@ -1,0 +1,17 @@
+.layout {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.layout-main-frame {
+    width: 700px;
+    height: 800px;
+    box-shadow: var(--shadow) var(--shadow-color);
+    display: flex;
+    flex-direction: column;
+
+    background: white;
+}

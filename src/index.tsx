@@ -1,13 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/index.scss";
-import App from "./App";
+import Layout from "./components/Layout/Layout";
+import Algo from "./providers/Algo.provider";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <App />
+    <Algo>
+      <Layout />
+    </Algo>
   </React.StrictMode>
 );

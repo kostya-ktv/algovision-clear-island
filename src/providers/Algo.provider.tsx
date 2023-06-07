@@ -32,7 +32,7 @@ export const AlgoProvider: React.FC<{ children: ReactNode }> = ({
       isRunning,
       setIsRunning,
     }),
-    [table, tableSize]
+    [table, tableSize, tableSize]
   );
 
   return (

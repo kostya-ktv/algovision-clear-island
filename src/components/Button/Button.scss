@@ -1,18 +1,28 @@
 .button {
     padding: 10px 30px;
+    width: 100%;
     font-size: 15px;
     border: none;
     box-shadow: var(--box-shadow);
     background-color: #cdffd5;
     border: 1px solid #ededed;
     color: var(--font-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
     transition: transform .3s ease;
     &:hover {
         transform: translateY(-2px);
+        border: 1px solid #b5b5b5;
     }
     &:active{
         transform: translateY(1px);
     }
+}
+
+.blue {
+    background-color: rgb(199, 250, 253);
 }

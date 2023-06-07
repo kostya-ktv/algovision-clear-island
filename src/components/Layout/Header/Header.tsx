@@ -4,7 +4,7 @@ import "./Header.scss";
 const Header = () => {
   return (
     <div className="header">
-      <span>Algovision: Clear spots</span>
+      <span>Algovision: Remove islands</span>
     </div>
   );
 };

@@ -1,18 +1,41 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useMemo, useState } from "react";
 
 interface IAlgoProvider {
-  isStarted?: boolean;
+  tableSize: {
+    height: number;
+    width: number;
+  };
+  setTableSize: Function;
+  table: number[][];
+  setTable: Function;
+  isRunning: boolean;
+  setIsRunning: Function;
 }
-const AlgoProvider = createContext<IAlgoProvider>({});
+export const AlgoContext = createContext<IAlgoProvider>({} as any);
 
-const Algo: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [algoState, setAlgoState] = useState<IAlgoProvider>({
-    isStarted: false,
+export const AlgoProvider: React.FC<{ children: ReactNode }> = ({
+  children,
+}) => {
+  const [tableSize, setTableSize] = useState<IAlgoProvider["tableSize"]>({
+    height: 5,
+    width: 5,
   });
+  const [table, setTable] = useState<IAlgoProvider["table"]>([[]]);
+  const [isRunning, setIsRunning] = useState<IAlgoProvider["isRunning"]>(false);
+
+  const contextValue: IAlgoProvider = useMemo(
+    () => ({
+      setTable,
+      setTableSize,
+      table,
+      tableSize,
+      isRunning,
+      setIsRunning,
+    }),
+    [table, tableSize]
+  );
+
   return (
-    <AlgoProvider.Provider value={{ isStarted: algoState.isStarted }}>
-      {children}
-    </AlgoProvider.Provider>
+    <AlgoContext.Provider value={contextValue}>{children}</AlgoContext.Provider>
   );
 };
-export default Algo;

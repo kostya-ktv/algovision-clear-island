@@ -1,8 +1,6 @@
 export type CurtainShowingType = "code" | "info"
 
-export const legend = () => {
-    /**
-     * The algorithm removes all islands from the map.
+export const legend = `The algorithm removes all islands from the map.
         An island is two or more points on the map 
         that touch horizontally or vertically.
 
@@ -14,7 +12,7 @@ export const legend = () => {
             [1,0,1,0,0],
             [1,0,1,0,0]
         ]
-        
+
         Expected output:
         [
             [1,0,0,0,1],
@@ -23,6 +21,4 @@ export const legend = () => {
             [0,0,0,0,0],
             [0,0,0,0,0]
         ]
-    */
-    
-}
+    */`

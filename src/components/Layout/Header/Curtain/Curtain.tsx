@@ -4,7 +4,7 @@ import { CurtainShowingType, legend } from "./curtain.service";
 import classNames from "../../../../helpers/classNames";
 import { VscClose } from "react-icons/vsc";
 import CodeFragment from "../../../shared/CodeFragment/CodeFragment";
-import { clearTable } from "../../../../service/algo.service";
+import { code } from "../../../../util/fragments";
 
 interface ICurtain {
   isShow: boolean;
@@ -12,8 +12,8 @@ interface ICurtain {
   onClose: Function;
 }
 const Curtain: React.FC<ICurtain> = (props) => {
-  const codeText = clearTable.toString();
-  const legendText = legend.toString();
+  const codeText = code;
+  const legendText = legend;
   const { isShow, type, onClose } = props;
   return (
     <div className={classNames("curtain", { isCollapsed: !isShow })}>

@@ -17,8 +17,8 @@ export const AlgoProvider: React.FC<{ children: ReactNode }> = ({
   children,
 }) => {
   const [tableSize, setTableSize] = useState<IAlgoProvider["tableSize"]>({
-    height: 5,
-    width: 5,
+    height: 15,
+    width: 15,
   });
   const [table, setTable] = useState<IAlgoProvider["table"]>([[]]);
   const [isRunning, setIsRunning] = useState<IAlgoProvider["isRunning"]>(false);

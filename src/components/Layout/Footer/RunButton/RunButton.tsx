@@ -1,5 +1,5 @@
 import { memo } from "react";
-import Button from "../../../Button/Button";
+import Button from "../../../shared/Button/Button";
 import useRun from "../../../../hooks/useRun";
 
 const RunButton = () => {

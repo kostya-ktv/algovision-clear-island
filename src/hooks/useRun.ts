@@ -3,7 +3,7 @@ import useAlgo from "./useAlgo"
 import { clearTable } from "../service/algo.service"
 
 const useRun = () => {
-    const { table, setTable} = useAlgo()
+    const { table, setTable } = useAlgo()
     return useCallback(() => {
         const tmp = clearTable([...table])
         setTable(tmp)

@@ -1,7 +1,8 @@
 import { useMemo } from "react";
-import classNames from "../../helpers/classNames";
+import classNames from "../../../helpers/classNames";
 import "./Button.scss";
 import { BiShuffle, BiRun } from "react-icons/bi";
+import { HiOutlineCode } from "react-icons/hi";
 
 interface IButton
   extends React.DetailedHTMLProps<
@@ -9,14 +10,15 @@ interface IButton
     HTMLButtonElement
   > {
   isDisabled?: boolean;
-  theme?: "blue" | "red";
-  icon?: "shuffle" | "run";
+  theme?: "blue" | "red" | "neutral";
+  icon?: "shuffle" | "run" | "code";
 }
 const Button: React.FC<IButton> = (props) => {
   const { isDisabled, icon, theme, children, ...restProps } = props;
   const Icon = useMemo(() => {
     if (icon === "shuffle") return BiShuffle;
     if (icon === "run") return BiRun;
+    if (icon === "code") return HiOutlineCode;
   }, [icon]);
   return (
     <button
@@ -27,7 +29,7 @@ const Button: React.FC<IButton> = (props) => {
       ])}
     >
       {Icon && <Icon size={20} />}
-      <div>{children}</div>
+      <div className="button-children">{children}</div>
     </button>
   );
 };

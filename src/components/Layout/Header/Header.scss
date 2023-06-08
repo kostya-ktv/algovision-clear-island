@@ -1,8 +1,27 @@
 .header {
-    margin: auto;
+    
     padding: 5px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    padding: var(--padding);
     span {
         font-size: 20px;
         font-weight: 400;
+    }
+}
+.header-buttons {
+    display: flex;
+    position: absolute;
+    right: 20px;
+    gap: 10px;
+    .header-buttons-icon {
+        padding: 3px;
+        color: rgb(71, 71, 71);
+        cursor: pointer;
+        border: 1px solid rgb(255, 255, 255);
+        &:hover {
+            border: 1px solid rgb(232, 232, 232);
+        }
     }
 }

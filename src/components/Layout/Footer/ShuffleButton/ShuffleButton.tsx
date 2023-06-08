@@ -1,5 +1,5 @@
 import { memo, useEffect } from "react";
-import Button from "../../../Button/Button";
+import Button from "../../../shared/Button/Button";
 import useShuffle from "../../../../hooks/useShuffle";
 
 const ShuffleButton = () => {

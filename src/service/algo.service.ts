@@ -1,4 +1,5 @@
 export const clearTable = (table: number[][]) => {
+
     let runningIndex = [0, 0]
 
     const run = () => {
@@ -8,15 +9,16 @@ export const clearTable = (table: number[][]) => {
             for (let internalIndex = runningIndex[1]; internalIndex < table.length; internalIndex++) {
                 const currentElement = table[externalIndex][internalIndex]
                 runningIndex[1]++
-                
+              
                 if (currentElement) {
+               
                     //element [number,number]
                     let checkedElements: Array<{element: any, isChecked: boolean}> = []
                     const currentIndexElement = [externalIndex, internalIndex]
                     checkedElements.push({ element: currentIndexElement, isChecked: false })
                     
                     while (checkedElements.length && checkedElements.some(el => el.isChecked === false)) {
-
+ 
                         const unCheckedIndex = checkedElements.findIndex(el => el.isChecked === false)
                         const siblings = getPositiveSiblings(checkedElements[unCheckedIndex].element, table)
                         const filteredSiblings = siblings.filter(sib => {
@@ -30,12 +32,12 @@ export const clearTable = (table: number[][]) => {
                     }
                     const spots = checkedElements.map(el => el.element)
                     removeSpots(spots)
-                   
+                  
                 }
                 
             }
-            /*  not to reset the value on the last element in the island 
-                and get the last runningIndex
+            /*  not to reset the value on the last element 
+                get the last runningIndex
             */
             if (externalIndex !== table.length - 1) runningIndex[1] = 0
             
@@ -84,6 +86,6 @@ export const clearTable = (table: number[][]) => {
     while (runningIndex[0] !== table.length && runningIndex[1] !== table.length) {
         run()  
     }
-    
+ 
     return table
 }
